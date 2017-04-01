@@ -1,0 +1,63 @@
+
+{% extends "layout.html" %}
+
+{% block main %}
+
+
+<h3>{{title}} </h3>
+
+<form action="{{ url_for('list') }}" method="post">
+    <fieldset>
+        <div class="form-group" > 
+        Start date
+            <input autocomplete="off" class="form-control" name="startdate" placeholder="yyyy/mm/dd" type="date">
+        End date
+            <input autocomplete="off" class="form-control" name="enddate" placeholder="yyyy/mm/dd" type="date">
+        </div>
+
+        <div class="form-group">
+         
+         Name
+            <input autocomplete="off" class="form-control" name="name" placeholder="Ex: Salary" type="text">
+        </div>
+
+            
+        <div class="form-group">
+            <button class="btn btn-default" type="submit">Submit</button> 
+        </div>
+        
+         
+    </fieldset>       
+</form>
+<div id="middle">
+<table class="table table-striped">
+
+    <thead>
+        <tr> <!-- name of column ROW1 -->
+            <th>ID</th><th>Date</th> <th>Type</th> <th>Name</th> <th>Amount</th> 
+        </tr>
+    </thead>
+
+    <tbody>
+    <!-- row 2 -->
+    {% for row in rows%}
+    <tr>
+        <td>{{row.itemID}}</td>
+        <td>{{row.itemdate}}</td>
+        <td>{{row.itemtype}}</td>
+        <td>{{row.name}}</td>
+        <td>${{row.amount}}</td>
+       
+    </tr>
+    {%endfor%}
+    
+    <!-- row 4: Savings  -->
+    
+
+    </tbody>
+
+</table>
+            </div>
+ 
+
+{% endblock %}

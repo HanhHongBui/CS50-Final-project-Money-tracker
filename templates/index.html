@@ -1,0 +1,23 @@
+
+
+{% extends "layout.html" %}
+
+{% block main %}
+<br />
+<br />
+<br />
+<h4>My name is Bui Hong Hanh from Ho Chi Minh City, Vietnam. </h4>
+<h4>This is my CS50 final project, named Money Tracker.</h4>
+<br />
+<h4> The app will help you </h4>
+
+<br />
+<br />
+
+
+		{% for p in paragraph%}
+		<h4> <li>{{p}}</li></h4>
+	
+		{% endfor %}
+
+{% endblock %}		

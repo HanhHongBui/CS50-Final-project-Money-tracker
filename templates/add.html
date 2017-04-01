@@ -1,0 +1,30 @@
+
+{% extends "layout.html" %}
+
+{% block main %}
+
+
+<h3>{{title}} </h3>
+
+<form action="{{ url_for('add') }}" method="post">
+    <fieldset>
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus="" class="form-control" name="itemdate" placeholder="yyyy-mm-dd" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="itemtype" placeholder="income/expense" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="name" placeholder="Insert name. Ex: Salary" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="form-control" name="amount" placeholder="amount" type="text">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" type="submit">Add</button>
+        </div>
+    </fieldset>
+</form>
+
+{% endblock %}

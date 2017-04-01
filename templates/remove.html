@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<form action="{{ url_for('remove') }}" method="post">
+
+ <div class="form-group">
+         
+         Please insert itemID to delete
+            <input autocomplete="off" class="form-control" name="itemID" placeholder="itemID" type="text">
+        </div>
+
+            
+        <div class="form-group">
+            <button class="btn btn-default" type="submit">Submit</button> 
+        </div>
+</form>        
+
+
+{% endblock %}

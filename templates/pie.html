@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="showchart" > 
+<h3>{{title_in}}</h3>
+{{ piechart_in | safe }}
+<h3>{{title_ex}} </h3>
+{{ piechart_ex | safe }} 
+
+</div>
+
+
+{% endblock %}
