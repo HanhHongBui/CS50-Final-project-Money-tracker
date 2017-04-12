@@ -1,8 +1,5 @@
 from flask import Flask, render_template, url_for, redirect,request
 import datetime as dt
-
-#from datetime import datetime
-#from tempfile import gettempdir
 import pyodbc
 import pandas as pd 
 import plotly
@@ -33,8 +30,6 @@ def list():
 	title = "List of incomes and expenses"
 	paragraph = ["incomes and expenses"]
 	
-	
-	saving = 1000
 	#connect to the database
 	cursor = cnxn.cursor()
 
@@ -53,10 +48,7 @@ def list():
 		elif name !="":
 			rows = cursor.execute("""SELECT * FROM items WHERE itemdate >= ? and itemdate <= ?  and name = ?  ORDER BY itemdate DESC """, startdate, enddate, name).fetchall()
 		
-
-		
 		return render_template("list.html",title = title, rows = rows)
-		
 
 	else:
 		rows = cursor.execute("""SELECT * FROM items ORDER BY itemdate DESC """).fetchall()
